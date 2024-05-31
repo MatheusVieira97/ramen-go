@@ -1,14 +1,20 @@
+
 import AbstractView from "../AbstractView.js";
-import home from './Home.html';
+import HomeView from './Home.html';
 
-
-export default class NotFound extends AbstractView {
+import Header from '../../components/Header/Header.js';
+export default class Home extends AbstractView {
     constructor(params) {
         super(params);
-        this.setTitle("RH - Not Found");
+        this.setTitle("RamenGo! - Home");
+        this.components = {
+            Header,
+        }
+
     }
 
     async getHtml() {
-        return home;
-    }
+        return HomeView;
+    }     
 }
+
