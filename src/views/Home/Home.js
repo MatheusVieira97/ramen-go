@@ -1,5 +1,5 @@
 import AbstractView from "../AbstractView.js";
-import home from './home.html';
+import home from './Home.html';
 
 
 export default class NotFound extends AbstractView {
