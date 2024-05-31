@@ -7,11 +7,11 @@ const ESLintPlugin = require('eslint-webpack-plugin');
 
 const config = {
   entry: './src/Routes.js',
-  mode: 'development',
+  mode: 'production',
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'bundle.js',
-    publicPath: '/'
+    publicPath: './'
   },
   devServer: {
     static: {
