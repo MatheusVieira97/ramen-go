@@ -9,6 +9,7 @@ export default class extends AbstractView {
         return `
             <h1>Not Found 404</h1>
             <p>Parece que essa página não existe!</p>
+            <a href="/home">Redirect!</a>
         `;
     }
 }

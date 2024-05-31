@@ -18,8 +18,8 @@ const navigateTo = url => {
 
 const router = async () => {
     const routes = [
-        { path: "/notfound",             view: NotFound },
-        { path: "/home",                 view: Home },
+        { path: "/not-found",             view: NotFound },
+        { path: "/home",                  view: Home },
     ];
 
     const potentialMatches = routes.map(route => {
