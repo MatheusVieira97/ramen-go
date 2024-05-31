@@ -5,13 +5,14 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const ESLintPlugin = require('eslint-webpack-plugin');
 
+const isProduction = process.env.NODE_ENV == 'production';
 const config = {
-  entry: './src/Routes.js',
-  mode: 'production',
+  entry: './src/index.js',
+  mode: isProduction ? "production" : "development",
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'bundle.js',
-    publicPath: './'
+    publicPath: isProduction ? './' : '/'
   },
   devServer: {
     static: {
@@ -30,31 +31,21 @@ const config = {
         loader: 'babel-loader'
       },
       {
-        test: /\.css$/,
+        test: /\.s[ac]ss$/i,
         use: [
-            MiniCssExtractPlugin.loader,
-            'css-loader'
+          MiniCssExtractPlugin.loader,
+          'css-loader',
+          'sass-loader', 
         ],
-        exclude: /\.module\.css$/
       },
+      {
+        test: /\.css$/i,
+        use: [ MiniCssExtractPlugin.loader,'css-loader'],
+      }, 
       {
         test: /\.html$/,
         use: ['html-loader']
       },
-      {
-        test: /\.css$/,
-        use: [
-            MiniCssExtractPlugin.loader,
-            {
-                loader: 'css-loader',
-                options: {
-                    importLoaders: 1,
-                    modules: true
-                }
-            }
-        ],
-        include: /\.module\.css$/
-      }
     ]
   },
   plugins: [
