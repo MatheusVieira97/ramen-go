@@ -1,6 +1,19 @@
+@font-face {
+    font-family: 'Mplus-Black'; 
+    src: url('../assets/fonts/M_PLUS_Rounded_1c/MPLUSRounded1c-Black.ttf') format('truetype'),
+}
+@font-face {
+    font-family: 'Mplus-Bold'; 
+    src: url('../assets/fonts/M_PLUS_Rounded_1c/MPLUSRounded1c-ExtraBold.ttf') format('truetype'),
+}
+@font-face {
+    font-family: 'Mplus-Medium'; 
+    src: url('../assets/fonts/M_PLUS_Rounded_1c/MPLUSRounded1c-Medium.ttf') format('truetype'),
+}
+
 * {
     box-sizing: border-box;
     margin: 0px;
     padding: 0px;
-    font-family: 'Quicksand', sans-serif;
+    font-family: 'Mplus-Black', serif;
 }
