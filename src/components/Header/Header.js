@@ -1,3 +1,4 @@
+import LogoYellow from '../../assets/images/logo-yellow.png';
 import HeaderHtmlContent from './Header.html';
 export default class Header extends HTMLElement {
   constructor() {
@@ -16,15 +17,18 @@ export default class Header extends HTMLElement {
 
   createStyles() {
     return `
-      h1 {
-        color: red;
+    header {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      margin: 0;
+      padding-top: 5%;
+
+      img {
+        content: url(${LogoYellow})
       }
-      div {
-        background-color: blue;
-      }
-      p {
-        color: blue;
-      }`
+    }
+    `
   }
 }
 
