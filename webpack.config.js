@@ -35,29 +35,38 @@ const config = {
         use: [
           MiniCssExtractPlugin.loader,
           'css-loader',
-          'sass-loader', 
+          'sass-loader',
         ],
       },
       {
         test: /\.css$/i,
-        use: [ MiniCssExtractPlugin.loader,'css-loader'],
-      }, 
+        use: [MiniCssExtractPlugin.loader, 'css-loader'],
+      },
       {
         test: /\.html$/,
         use: ['html-loader']
       },
+      {
+        test: /\.png/,
+        type: 'asset/resource'
+      },
+      {
+        test: /\.svg/,
+        type: 'asset/inline'
+      }
+
     ]
   },
   plugins: [
     new HtmlWebpackPlugin({
-        template: path.resolve(__dirname, "index.html")
+      template: path.resolve(__dirname, "index.html")
     }),
     new MiniCssExtractPlugin(),
     new ESLintPlugin({
-        failOnError: false,
-        failOnWarning: false,
-        emitWarning: false,
-        emitError: false,
+      failOnError: false,
+      failOnWarning: false,
+      emitWarning: false,
+      emitError: false,
     })
   ]
 };
