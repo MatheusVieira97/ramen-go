@@ -1,0 +1,58 @@
+.banner {
+    background-image: url('../../assets/images/pattern-blue.svg');
+    background-size: contain;
+    height: 70vh;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #FAFAED;
+    font-size: 1.4em;
+    font-family: 'Mplus-Bold';
+
+    .order-tittle {
+        font-size: 1.8;
+        font-family: 'Mplus-Black';
+        color: #FFC024;
+        padding-top: 5%;
+    }
+}
+
+
+.order-prepared {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    background-color: #FAFAED ;
+
+    img {
+        width: 60px;
+        height: 60px;
+        align-self: center;
+        margin-top: 14%;
+    }
+
+    .button {
+        padding-bottom: 10%;
+    }
+}
+
+p {
+    padding: 0% 5%;
+    font-family: 'Mplus-Medium';
+}
+
+.yellow-tittle {
+    font-size: 1.2em;
+    color: #FFC024;
+    font-family: 'Mplus-Black';
+    padding-top: 5%;
+}
+
+.red-tittle {
+    font-size: 1.4em;
+    color: #FF4E42;
+    padding: 5% 20%;
+    font-family: 'Mplus-Bold';
+}
