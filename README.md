@@ -1,5 +1,7 @@
 # Desafio Front-End: RamenGo
 
+[Leia esta página em inglês]()
+
 ## Objetivo:
 
 Desenvolver uma página web interativa chamada RamenGo utilizando apenas HTML, CSS e Javascript, sem nenhum framework ou biblioteca. O objetivo é demonstrar conhecimento das tecnologias básicas de desenvolvimento web e habilidades de codificação manual.
