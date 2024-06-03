@@ -2,16 +2,17 @@ export default class Https {
     constructor() {}
 
     async buildUrl(route) {
+        console.log(process.env.API_URL);
         const BASE_URL = process.env.API_URL;
         return `${BASE_URL}/${route}`;
     }
 
     async buildOptions(method, params) {
+        console.log(process.env.API_KEY);
         const API_KEY = process.env.API_KEY;
         const options = {
             method,
             headers: {
-                'Access-Control-Allow-Origin': '*',
                 'x-api-key': `${API_KEY}`
             },
         };
@@ -47,6 +48,7 @@ export default class Https {
     }
 
     async get(route) {
+        debugger;
         return await this.makeRequest(await this.buildUrl(route), 'GET');
     }
 
