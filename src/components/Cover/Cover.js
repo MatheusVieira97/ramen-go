@@ -56,6 +56,45 @@ export default class Cover extends HTMLElement {
       width: 40px;
       height: 90px;
     }
+
+    @media(min-width: 1800px) {
+      .cover-delivery {
+        margin-top: 5%;
+        padding-left: 6%;
+        overflow: hidden;
+      }
+
+      .cover-delivery__circle {
+        height: 58vh;
+        width: 30vw;
+        margin-top: 2.5%;
+      }
+
+      .delivery-girl {
+        max-width: 700px;
+        max-heigth: 700px;
+        width: 35%;
+        height: auto;
+      } 
+
+      .balloon-blue {
+        max-width: 120px;
+        max-heigth: 130px;
+        top: 10%;
+        left: 40%;
+        width: 130px;
+        height: 140px;
+      }
+
+      .balloon-yellow {
+        max-width: 120px;
+        max-heigth: 250px;
+        top: 39%;
+        right: 26%;
+        width: 140px;
+        height: 280px;
+      }
+    }
     `
   }
 }
