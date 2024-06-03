@@ -38,7 +38,6 @@ export default class WelcomeBanner extends HTMLElement {
   }
 
   redirect() {
-    debugger
     document.getElementById('broths').scrollIntoView();
   }
 
