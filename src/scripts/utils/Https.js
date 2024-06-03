@@ -2,7 +2,7 @@ export default class Https {
     constructor() {}
 
     async buildUrl(route) {
-        const BASE_URL = process.env.BASE_URL;
+        const BASE_URL = process.env.API_URL;
         return `${BASE_URL}/${route}`;
     }
 
@@ -12,7 +12,7 @@ export default class Https {
             method,
             headers: {
                 'Access-Control-Allow-Origin': '*',
-                'x-api-key': 'ZtVdh8XQ2U8pWI2gmZ7f796Vh8GllXoN7mr0djNf'
+                'x-api-key': `${API_KEY}`
             },
         };
 
