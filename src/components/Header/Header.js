@@ -39,6 +39,7 @@ export default class Header extends HTMLElement {
       justify-content: center;
       margin: 0;
       padding-top: 15%;
+      padding-bottom: 20px;
 
       img {
         content: url(${LogoRed})
@@ -49,6 +50,31 @@ export default class Header extends HTMLElement {
       padding-top: 5%;
       img {
         content: url(${LogoYellow})
+      }
+    }
+
+    @media (min-width: 1100px) {
+      header {
+        justify-content: center;
+      }   
+    }
+
+    @media (min-width: 1800px) {
+      header {
+        width: 100%;
+        display: block;
+        position: relative;
+        top: 2%;
+        left: 2%;
+        padding: 0;
+
+        img {
+          width: 8%;
+        }
+      }
+
+      .yellow {
+        padding-top: 2%;
       }
     }
     `
