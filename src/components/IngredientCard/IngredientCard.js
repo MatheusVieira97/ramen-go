@@ -155,6 +155,13 @@ export default class IngredientCard extends HTMLElement {
         p {
             font-family: 'Mplus-Medium';
         }
+
+        @media (min-width: 1100px) {
+            .ingredient-card {
+                max-width: 360px;
+                max-height: 360px;
+            }
+        }
     `
     }
 }
