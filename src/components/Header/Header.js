@@ -1,11 +1,28 @@
+import LogoRed from '../../assets/images/logo-red.png';
+import LogoYellow from '../../assets/images/logo-yellow.png';
 import HeaderHtmlContent from './Header.html';
 export default class Header extends HTMLElement {
   constructor() {
     super();
-    this.shadow = this.attachShadow({ mode: 'open' });
+    this.createElement();
   }
 
-  connectedCallback() {
+  static get observedAttributes() {
+    return ['color'];
+  }
+
+  attributeChangedCallback(name, oldValue, newValue) {
+    this.color = name === 'color' ? newValue : '';
+    this.updateColor();
+  }
+
+  updateColor() {
+    this.shadowRoot.querySelector('header').classList.add('yellow');
+  }
+
+
+  createElement() {
+    this.shadow = this.attachShadow({ mode: 'open' });
     const template = document.createElement('template');
     template.innerHTML = `${HeaderHtmlContent}`;
     const style = document.createElement('style');
@@ -16,15 +33,25 @@ export default class Header extends HTMLElement {
 
   createStyles() {
     return `
-      h1 {
-        color: red;
+    header {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      margin: 0;
+      padding-top: 15%;
+
+      img {
+        content: url(${LogoRed})
+      } 
+    }
+
+    .yellow {
+      padding-top: 5%;
+      img {
+        content: url(${LogoYellow})
       }
-      div {
-        background-color: blue;
-      }
-      p {
-        color: blue;
-      }`
+    }
+    `
   }
 }
 

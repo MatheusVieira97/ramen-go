@@ -1,6 +1,7 @@
 
 const webpack = require('webpack');
 const path = require('path');
+const Dotenv = require('dotenv-webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const ESLintPlugin = require('eslint-webpack-plugin');
@@ -35,29 +36,39 @@ const config = {
         use: [
           MiniCssExtractPlugin.loader,
           'css-loader',
-          'sass-loader', 
+          'sass-loader',
         ],
       },
       {
         test: /\.css$/i,
-        use: [ MiniCssExtractPlugin.loader,'css-loader'],
-      }, 
+        use: [MiniCssExtractPlugin.loader, 'css-loader'],
+      },
       {
         test: /\.html$/,
         use: ['html-loader']
       },
+      {
+        test: /\.png/,
+        type: 'asset/resource'
+      },
+      {
+        test: /\.svg/,
+        type: 'asset/inline'
+      }
+
     ]
   },
   plugins: [
+    new Dotenv(),
     new HtmlWebpackPlugin({
-        template: path.resolve(__dirname, "index.html")
+      template: path.resolve(__dirname, "index.html")
     }),
     new MiniCssExtractPlugin(),
     new ESLintPlugin({
-        failOnError: false,
-        failOnWarning: false,
-        emitWarning: false,
-        emitError: false,
+      failOnError: false,
+      failOnWarning: false,
+      emitWarning: false,
+      emitError: false,
     })
   ]
 };
