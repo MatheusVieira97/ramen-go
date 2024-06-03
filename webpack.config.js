@@ -59,6 +59,12 @@ const config = {
     ]
   },
   plugins: [
+    new webpack.DefinePlugin({
+      'process.env': {
+         'API_KEY': JSON.stringify(process.env.API_KEY),
+         'API_URL': JSON.stringify(process.env.API_URL),
+      }
+    }),
     new Dotenv(),
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, "index.html")
