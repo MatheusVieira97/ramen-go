@@ -6,8 +6,6 @@ import LocalStorageManager from '../../scripts/utils/StorageManager.js';
 import OrderService from '../../services/Order.service.js';
 
 export default class Sucess extends AbstractView {
-
-
     constructor(params) {
         super(params);
         this.setTitle("RamenGo! - Sucess");
