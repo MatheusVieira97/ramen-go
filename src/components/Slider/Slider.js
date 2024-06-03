@@ -215,7 +215,18 @@ export default class Slider extends HTMLElement {
                 opacity: 0.9;
             }
         }
-        
+
+        @media(min-width: 1100px){
+            .wrapper {
+                ul {
+                    justify-content: center;
+                }
+            }
+
+            .slider-dots {
+                display: none;
+            }
+        }
     `
     }
 }

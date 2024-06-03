@@ -39,7 +39,7 @@ export default class RoundedButton extends HTMLElement {
 
     .rounded-button {
       cursor: pointer;
-      width: 70%;
+      min-width: 160px;
       height: 60px;
       border-radius: 80px;
       border-style: none;
@@ -49,6 +49,22 @@ export default class RoundedButton extends HTMLElement {
 
     .disabled {
       background-color: #c5c5c5
+    }
+
+    .centralize-left {
+      justify-content: left;
+      display: none;
+    }
+
+    @media(min-width: 1100px){
+      .button-container {
+        padding: 0 0 2% 0;
+      }
+
+      .centralize-left {
+        display: block;
+        margin: 3% 0 0 20%;
+      }
     }
     `
   }
