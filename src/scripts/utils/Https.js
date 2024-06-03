@@ -47,7 +47,6 @@ export default class Https {
     }
 
     async get(route) {
-        debugger;
         return await this.makeRequest(await this.buildUrl(route), 'GET');
     }
 
