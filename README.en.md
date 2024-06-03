@@ -1,6 +1,6 @@
 # Front-End Challenge: RamenGo
 
-[Leia esta página em português]()
+[Leia esta página em português](https://github.com/MatheusVieira97/ramen-go/blob/production/README.md)
 
 ## Objective:
 
