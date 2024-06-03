@@ -1,5 +1,5 @@
 import Home from "./views/Home/Home.js";
-import NotFound from "./views/NotFound/NotFound.js";
+import Sucess from "./views/Sucess/Sucess.js";
 
 const pathToRegex = path => new RegExp("^" + path.replace(/\//g, "\\/").replace(/:\w+/g, "(.+)") + "$");
 const getParams = match => {
@@ -19,7 +19,7 @@ const navigateTo = url => {
 const router = async () => {
     const routes = [
         { path: "/home",                  view: Home },
-        { path: "/not-found",             view: NotFound },
+        { path: "/sucess",                view: Sucess },
     ];
 
     const potentialMatches = routes.map(route => {
