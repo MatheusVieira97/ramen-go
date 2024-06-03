@@ -60,6 +60,12 @@ const config = {
   },
   plugins: [
     new Dotenv(),
+    new webpack.DefinePlugin({
+      'process.env': {
+         'API_KEY': JSON.stringify(process.env.API_KEY),
+         'API_URL': JSON.stringify(process.env.API_URL),
+      }
+    }),
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, "index.html")
     }),
