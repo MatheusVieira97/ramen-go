@@ -1,3 +1,30 @@
 .home_container {
     color: rgb(60, 255, 0);
 }
+
+.ingredients {
+    background-color: #FAFAED;
+
+    h4 {
+        font-family: 'Mplus-Black';
+        text-align: center;
+        font-size: 1.4em;
+        padding: 5%;
+    }
+
+    p {
+        font-family: 'Mplus-Medium';
+        padding: 2%;
+        text-align: center;
+    }
+}
+
+.ingredients-select {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#broth-slider, #protein-slider {
+    width: 100%;
+}
