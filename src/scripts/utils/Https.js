@@ -11,8 +11,7 @@ export default class Https {
         const options = {
             method,
             headers: {
-                'Access-Control-Allow-Origin': '*',
-                'x-api-key': `${API_KEY}`
+                'x-api-key': API_KEY
             },
         };
 
