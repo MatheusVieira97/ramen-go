@@ -18,6 +18,25 @@
     }
 }
 
+.image-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10% 0 5% 0;
+}
+
+.ramen-image {
+    max-width: 350px;
+    max-height: 380px;
+}
+
+.order {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-self: center;
+}
+
 
 .order-prepared {
     display: flex;
@@ -44,6 +63,7 @@ p {
 }
 
 .yellow-tittle {
+    text-align: center;
     font-size: 1.2em;
     color: #FFC024;
     font-family: 'Mplus-Black';
@@ -51,8 +71,67 @@ p {
 }
 
 .red-tittle {
+    text-align: center;
     font-size: 1.4em;
     color: #FF4E42;
     padding: 5% 20%;
     font-family: 'Mplus-Bold';
+}
+
+@media (min-width: 1100px) {
+    .container {
+        height: 100vh;
+        display: flex;
+        justify-content: space-evenly;
+        
+        .banner {
+            display: block;
+            height: 100vh;
+            width: 100%;
+        }
+
+        .order {
+            height: 90%;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+            .order-tittle {
+                font-size: 2em;
+                padding: 0
+            }
+
+        }
+
+        .order-prepared {
+            height: 100vh;
+            width: 100%;
+
+            img {
+                margin-top: 10%;
+            }
+
+            p {
+                font-size: 1.2em;
+                padding: 0;
+                margin-bottom: 2%;
+            }
+
+            .yellow-tittle {
+                font-size: 2em;
+                margin-top: 2%;
+            }
+
+            .red-tittle {
+                font-size: 3em;
+            }
+        }
+    }
+
+    .bowing {
+        width: 40px;
+        height: 40px;
+    }
 }

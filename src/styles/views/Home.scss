@@ -28,3 +28,18 @@
 #broth-slider, #protein-slider {
     width: 100%;
 }
+
+@media (min-width: 1100px) {
+    .ingredients {
+        h4 {
+            font-size: 3em;
+            padding-bottom: 3%;
+        }
+
+        p {
+            padding-top: 0;
+            font-size: 2em;
+        }
+
+    }
+}
