@@ -2,12 +2,17 @@ export default class Https {
     constructor() {}
 
     async buildUrl(route) {
-        const BASE_URL = 'https://api.tech.redventures.com.br';
+        const BASE_URL = process.env.API_URL;
+        const BASE_URL_TESTE = 'https://api.tech.redventures.com.br';
+        console.log(BASE_URL, BASE_URL_TESTE, BASE_URL === BASE_URL_TESTE);
+
         return `${BASE_URL}/${route}`;
     }
 
     async buildOptions(method, params) {
-        const API_KEY = 'ZtVdh8XQ2U8pWI2gmZ7f796Vh8GllXoN7mr0djNf';
+        const API_KEY = process.env.API_KEY;
+        const API_KEY_TESTE = 'ZtVdh8XQ2U8pWI2gmZ7f796Vh8GllXoN7mr0djNf';
+        console.log(API_KEY, API_KEY_TESTE, API_KEY === API_KEY_TESTE);
         const options = {
             method,
             headers: {
