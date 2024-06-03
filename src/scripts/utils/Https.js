@@ -2,17 +2,16 @@ export default class Https {
     constructor() {}
 
     async buildUrl(route) {
-        const BASE_URL = process.env.API_URL;
+        const BASE_URL = 'https://api.tech.redventures.com.br';
         return `${BASE_URL}/${route}`;
     }
 
     async buildOptions(method, params) {
-        const API_KEY = process.env.API_KEY;
+        const API_KEY = 'ZtVdh8XQ2U8pWI2gmZ7f796Vh8GllXoN7mr0djNf';
         const options = {
             method,
             headers: {
-                'Access-Control-Allow-Origin': '*',
-                'x-api-key': `${API_KEY}`
+                'x-api-key': API_KEY
             },
         };
 
