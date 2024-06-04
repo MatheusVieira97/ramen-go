@@ -109,6 +109,7 @@ export default class IngredientCard extends HTMLElement {
             align-items: center;
             font-size: 1em;
             width: 80vw;
+            max-height: 46vh;
             box-shadow: rgba(0, 0, 0, 0.10) 0px 3px 8px;
             border-radius: 10px;
             background-color: var(--white);
