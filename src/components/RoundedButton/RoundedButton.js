@@ -47,8 +47,8 @@ export default class RoundedButton extends HTMLElement {
       height: 60px;
       border-radius: 80px;
       border-style: none;
-      background-color: #1820EF;
-      color: #FAFAED;
+      background-color: var(--blue);
+      color: var(--white);
     }
 
     .disabled {

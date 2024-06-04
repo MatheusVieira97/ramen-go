@@ -6,14 +6,14 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    color: #FAFAED;
+    color: var(--white);
     font-size: 1.4em;
     font-family: 'Mplus-Bold';
 
     .order-tittle {
         font-size: 1.8;
         font-family: 'Mplus-Black';
-        color: #FFC024;
+        color: var(--yellow);
         padding-top: 5%;
     }
 }
@@ -43,7 +43,7 @@
     flex-direction: column;
     justify-content: center;
     text-align: center;
-    background-color: #FAFAED ;
+    background-color: var(--white) ;
 
     img {
         width: 60px;
@@ -65,7 +65,7 @@ p {
 .yellow-tittle {
     text-align: center;
     font-size: 1.2em;
-    color: #FFC024;
+    color: var(--yellow);
     font-family: 'Mplus-Black';
     padding-top: 5%;
 }
@@ -73,7 +73,7 @@ p {
 .red-tittle {
     text-align: center;
     font-size: 1.4em;
-    color: #FF4E42;
+    color: var(--red);
     padding: 5% 20%;
     font-family: 'Mplus-Bold';
 }
