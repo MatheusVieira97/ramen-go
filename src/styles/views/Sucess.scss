@@ -135,3 +135,10 @@ p {
         height: 40px;
     }
 }
+
+@media (max-height: 750px) {
+    .ramen-image {
+        max-height: 300px ;
+        max-width: 300px;
+    }
+}

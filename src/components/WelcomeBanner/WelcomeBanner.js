@@ -112,6 +112,25 @@ export default class WelcomeBanner extends HTMLElement {
         }
       }
     }
+
+    @media(max-height: 750px) {
+      .banner__text  {
+        .tittle {
+          display: flex;
+          flex-direction: column;
+          align-items:center;
+        }
+        h2 {
+          font-size: 2em;
+        }
+  
+        h3 {
+          font-size: 6em;
+        }
+      }
+    }
+
+    
     `
   }
 }
