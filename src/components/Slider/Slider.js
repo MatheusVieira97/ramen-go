@@ -34,14 +34,6 @@ export default class Slider extends HTMLElement {
         this.createDots(this.items);
     }
 
-    createDots(items) {
-        items.forEach((item, index) => {
-            const dot = this.createDot(index);
-            dot.id = index;
-            this.shadowRoot.querySelector('.slider-dots').appendChild(dot);
-        })
-    }
-
     createElement() {
         this.shadow = this.attachShadow({ mode: 'open' });
         const template = document.createElement('template');
@@ -50,6 +42,34 @@ export default class Slider extends HTMLElement {
         style.textContent = this.createStyles();
         this.shadow.appendChild(style);
         this.shadow.appendChild(template.content);
+    }
+
+    createDots(items) {
+        items.forEach((item, index) => {
+            const dot = this.createDot(index);
+            dot.id = index;
+            this.shadowRoot.querySelector('.slider-dots').appendChild(dot);
+        })
+    }
+
+    createDot(index) {
+        const span = document.createElement('span');
+        span.className = index === 0 ? 'dot dot-active' : 'dot';
+        return span;
+    }
+
+    updateActiveDot(index) {
+        const activeDot = this.shadowRoot.querySelector('.dot-active');
+        if (activeDot) {
+            activeDot.classList.remove('dot-active');
+        }
+
+        const dots = this.shadowRoot.querySelectorAll('.dot');
+        for (let dot of dots) {
+            if (dot.id === index) {
+                dot.classList.add("dot-active")
+            }
+        }
     }
 
     createItemsInList(items) {
@@ -76,23 +96,6 @@ export default class Slider extends HTMLElement {
         return card;
     }
 
-    handleClick = (event) => {
-        const id = Number(event.target.id) + 1
-
-        this.removePreviousSelected(event);
-
-        const card = event.currentTarget;
-        card.setAttribute('selected', true);
-
-        let customEvent = new CustomEvent('slide-item-selected', {
-            bubbles: true,
-            cancelable: true,
-            detail: id,
-            composed: true
-        });
-        this.dispatchEvent(customEvent);
-    }
-
     removePreviousSelected(event) {
         const slider = document.querySelector(`#${this.id}`).shadowRoot;
         const cards = slider.querySelectorAll('rmg-ingredient-card');
@@ -101,12 +104,6 @@ export default class Slider extends HTMLElement {
                 card.setAttribute('selected', false);
             }
         })
-    }
-
-    createDot(index) {
-        const span = document.createElement('span');
-        span.className = index === 0 ? 'dot dot-active' : 'dot';
-        return span;
     }
 
     bindEvents() {
@@ -142,26 +139,29 @@ export default class Slider extends HTMLElement {
         this.calculateNewPosition();
     }
 
+    handleClick = (event) => {
+        const id = Number(event.target.id) + 1
+
+        this.removePreviousSelected(event);
+
+        const card = event.currentTarget;
+        card.setAttribute('selected', true);
+
+        let customEvent = new CustomEvent('slide-item-selected', {
+            bubbles: true,
+            cancelable: true,
+            detail: id,
+            composed: true
+        });
+        this.dispatchEvent(customEvent);
+    }
+
     calculateNewPosition() {
         const listItems = this.shadowRoot.querySelectorAll('rmg-ingredient-card');
         for (const item of listItems) {
             const relativeLeftPostion = item.getBoundingClientRect().left;
             if (relativeLeftPostion > -150 && relativeLeftPostion < 180) {
                 this.updateActiveDot(item.id)
-            }
-        }
-    }
-
-    updateActiveDot(index) {
-        const activeDot = this.shadowRoot.querySelector('.dot-active');
-        if (activeDot) {
-            activeDot.classList.remove('dot-active');
-        }
-
-        const dots = this.shadowRoot.querySelectorAll('.dot');
-        for (let dot of dots) {
-            if (dot.id === index) {
-                dot.classList.add("dot-active")
             }
         }
     }
@@ -211,7 +211,7 @@ export default class Slider extends HTMLElement {
             .dot-active {
                 width: 36px;
                 border-radius: 80px 80px 80px 80px;
-                background-color: #FF4E42;
+                background-color: var(--red);
                 opacity: 0.9;
             }
         }

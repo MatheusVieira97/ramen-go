@@ -111,13 +111,13 @@ export default class IngredientCard extends HTMLElement {
             width: 80vw;
             box-shadow: rgba(0, 0, 0, 0.10) 0px 3px 8px;
             border-radius: 10px;
-            background-color: #FAFAED;
+            background-color: var(--white);
         }
 
         .ingredient-tittle {
             font-family: 'Mplus-Black';
             font-size: 1.4em;
-            color: #1820EF;
+            color: var(--blue);
             margin: 0;
             padding-top: 4%;
         }
@@ -130,19 +130,19 @@ export default class IngredientCard extends HTMLElement {
         }
 
         .ingrediente-value {
-            color: #FF4E42;
+            color: var(--red);
             font-family: 'Mplus-Bold';
             font-size: 1.4em;
             padding: 5%;
         }
 
         .price-selected {
-            color: #FFC024;
+            color: var(--yellow);
         }
 
 
         .selected {
-            background-color: #1820EF;
+            background-color: var(--blue);
             color: white;
         }
 
