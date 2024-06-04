@@ -15,8 +15,8 @@ export default class RoundedButton extends HTMLElement {
   }
 
   updateTextInHtml() {
-    const button = this.shadowRoot.querySelector('.rounded-button');
-    button.innerText = this.text;
+    const span = this.shadowRoot.querySelector('.span-text');
+    span.innerText = this.text;
   }
 
   createElement() {
@@ -38,6 +38,10 @@ export default class RoundedButton extends HTMLElement {
     }
 
     .rounded-button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
       cursor: pointer;
       min-width: 160px;
       height: 60px;
@@ -54,6 +58,12 @@ export default class RoundedButton extends HTMLElement {
     .centralize-left {
       justify-content: left;
       display: none;
+    }
+
+    .arrow-icon {
+      width: 26px;
+      height: 26px;
+      padding-left: 8px;
     }
 
     @media(min-width: 1100px){
