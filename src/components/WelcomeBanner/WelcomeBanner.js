@@ -58,7 +58,7 @@ export default class WelcomeBanner extends HTMLElement {
       h2 { 
         font-size: 3em;
         margin: 0;
-        color: #FFC024;
+        color: var(--yellow);
       }
 
       h3 {

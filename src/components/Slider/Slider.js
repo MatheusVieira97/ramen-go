@@ -211,7 +211,7 @@ export default class Slider extends HTMLElement {
             .dot-active {
                 width: 36px;
                 border-radius: 80px 80px 80px 80px;
-                background-color: #FF4E42;
+                background-color: var(--red);
                 opacity: 0.9;
             }
         }
